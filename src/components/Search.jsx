@@ -25,6 +25,7 @@ const Input = styled.input.attrs({
    border: none;
    outline: none;
    color: var(--colors-text);
+   background-color: inherit;
 `
 
 const Search = ({ search, setSearch }) => {
