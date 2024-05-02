@@ -12,7 +12,7 @@ const InputContainer = styled.label`
    margin-bottom: 1rem;
 
    @media (min-width: 767px) {
-      width: 280px;
+      width: 380px;
       margin-bottom: 0;
    }
 `
@@ -21,13 +21,16 @@ const Input = styled.input.attrs({
    type: 'search',
    placeholder: 'Search for a country...'
 })`
-
+   margin-left: 2rem;
+   border: none;
+   outline: none;
+   color: var(--colors-text);
 `
 
 const Search = ({ search, setSearch }) => {
    return (
       <InputContainer>
-         <IoSearch />
+         <IoSearch size="14px" />
          <Input onChange={(e) => setSearch(e.target.value)} value={search} />
       </InputContainer>
    )
