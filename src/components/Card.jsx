@@ -1,3 +1,4 @@
+import { Link, useParams } from "react-router-dom"
 import styled from "styled-components"
 
 const Wrapper = styled.article`
@@ -45,22 +46,28 @@ const CardListItem = styled.li`
    }
 `
 
+const deleteSpace = (str) => str.toLowerCase().split(' ').join('-')
 
-const Card = ({ img, name, info = [], onClick }) => {
+const Card = ({ img, name, info = [] }) => {
+   const slug = deleteSpace(name)
+
    return (
-      <Wrapper onClick={onClick}>
-         <CardImg src={img} />
-         <CardBody>
-            <CardTitle>{name}</CardTitle>
-            <CardList>
-               {info.map((el) => (
-                  <CardListItem key={el.title}>
-                     <b>{el.title}:</b> {el.description}
-                  </CardListItem>
-               ))}
-            </CardList>
-         </CardBody>
-      </Wrapper>
+
+      <Link style={{ display: 'block', textDecoration: 'none', color: 'inherit' }} to={`country/${slug}`}>
+         <Wrapper>
+            <CardImg src={img} />
+            <CardBody>
+               <CardTitle>{name}</CardTitle>
+               <CardList>
+                  {info.map((el) => (
+                     <CardListItem key={el.title}>
+                        <b>{el.title}:</b> {el.description}
+                     </CardListItem>
+                  ))}
+               </CardList>
+            </CardBody>
+         </Wrapper>
+      </Link>
    )
 }
 
