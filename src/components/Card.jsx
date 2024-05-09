@@ -46,10 +46,10 @@ const CardListItem = styled.li`
    }
 `
 
-const deleteSpace = (str) => str.toLowerCase().split(' ').join('-')
+// const deleteSpace = (str) => str.toLowerCase().split(' ').join('-')
 
 const Card = ({ img, name, info = [] }) => {
-   const slug = deleteSpace(name)
+   const slug = name
 
    return (
 
