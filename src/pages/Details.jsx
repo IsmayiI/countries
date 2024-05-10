@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { IoArrowBack } from "react-icons/io5"
 import { useNavigate, useParams } from "react-router-dom"
 import { searchByCountry } from "../config"
+import Button from "../components/Button"
 
 const Details = () => {
    const { name } = useParams()
@@ -22,9 +23,9 @@ const Details = () => {
 
    return (
       <div>
-         <button onClick={goBack} >
+         <Button onClick={goBack} >
             <IoArrowBack /> Back
-         </button>
+         </Button>
          Details {name}
       </div>
    )
