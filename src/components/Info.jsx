@@ -104,8 +104,7 @@ const Info = (props) => {
       tld = [],
       currencies,
       languages,
-      borders = [],
-      push
+      borders = []
    } = props
 
    const [neighbors, setNeighbors] = useState([])
